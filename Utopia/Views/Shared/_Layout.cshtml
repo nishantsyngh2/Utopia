@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+
+                <div class="row">       
+                    <h1> UTOPIA </h1>        
+                    @*<img class="col-md-2" style="height:5% ;width:10% ;background:grey" src="https://image.slidesharecdn.com/speakyourmindinowpresent-111006003259-phpapp02/95/speak-your-mind-1-728.jpg?cb=1329751528">*@
+                    @*<img class="col-md-8" style="height:5% ;width:80%;background:grey" src="http://www.text2image.com/user_images/text2image_P84567_20180607_084755.gif">*@
+                    @*<img class="col-md-2" style="height:5%;width:10% ;background:grey" src="https://hhsclarionnews.com/wp-content/uploads/2017/09/SHARE2010_11.jpg">*@
+                </div>  
+        </div>
+  </div>
+    <!---=================================================================================================================================================-->
+  <div >
+      <div class="row " >
+        <!--left panel section-->
+        <div class="col-lg-1 col-sm-1 col-md-1" style="background-color:#ebdbdb  ; margin-top: 21px;min-height:100vh">
+            @*<ul class="nav nav-pills nav-stacked">
+                <li id="sr"><a href="#sharearide" data-toggle="pill">Share a ride</a></li>
+                <li><a href="#classifieds" data-toggle="pill">Shoperific</a></li>
+                <li><a href="#events" data-toggle="pill">Events</a></li>
+                <li><a href="#complaints" data-toggle="pill">Secursolve </a></li>
+                <li><a href="#studygroups" data-toggle="pill">ServIQ</a></li>
+                <li><a href="#achivements" data-toggle="pill">Achivements</a></li>
+                <li><a href="#knowitAll" data-toggle="pill">KnowItAll</a></li>
+            </ul>*@
+
+         @Html.Partial("_SidePanel")
+        </div>
+        <!--left panel section ends-->
+        <!--right panel section-->
+        <div class="col-lg-11 col-sm-11 col-md-11" style="background-color:grey">
+            <header class="page-header clearfix">
+                <div class="">
+                    <div class="col-lg-12">
+                        <div class="logo pull-left">
+                            <h2>What's in your mind today</h2>
+                            <textarea rows="4" cols="50" id="txtPost"></textarea>
+                            <button type="submit" class="btn " onclick="appendComment()">Post</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="col-lg-11 col-md-11 col-sm-11" style="min-height:100vh ;background-color:aquamarine">
+            @RenderBody()
+        </div>
+        <!--right panel section ends-->
+    </div>
+    <div class="row">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+ </div>
+    <!---=================================================================================================================================================-->
+    @*<div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
